@@ -1,0 +1,5 @@
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=target/*.jar
+ADD sqlitesample.db sqlitesample.db
+COPY ${JAR_FILE} jumia-api.jar
+ENTRYPOINT [ "java","-jar","/jumia-api.jar" ]
